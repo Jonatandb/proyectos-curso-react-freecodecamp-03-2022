@@ -1,7 +1,6 @@
 import './App.css'
-import Formulario from './components/Formulario/Formulario'
+import { ListaDeTareas } from './components/ListaDeTareas/ListaDeTareas'
 import LogoFreeCodeCamp from './components/LogoFreeCodeCamp/LogoFreeCodeCamp'
-import Tarea from './components/Tarea/Tarea'
 
 function App() {
   return (
@@ -9,9 +8,7 @@ function App() {
       <LogoFreeCodeCamp />
       <div className='tareas-lista-principal'>
         <h1>Mis Tareas</h1>
-        <Formulario />
-        <Tarea completada texto='Aprender Javascript' />
-        <Tarea texto='Aprender React' />
+        <ListaDeTareas />
       </div>
     </div>
   )
