@@ -8,6 +8,7 @@ function App() {
       <LogoFreeCodeCamp />
       <div className='tareas-lista-principal'>
         <h1>Mis Tareas</h1>
+        <Tarea completada texto='Aprender Javascript' />
         <Tarea texto='Aprender React' />
       </div>
     </div>
