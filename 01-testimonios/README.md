@@ -2,6 +2,12 @@
 
 ¡Hola! Esta es una aplicación desarrollada con React que representa un clon de la sección de Testimonios de estudiantes de [freeCodeCamp](https://www.freecodecamp.org/espanol/).
 
+<p align="center">
+    <a href="https://github.com/Jonatandb/proyectos-curso-react-freecodecamp-03-2022/tree/master/01-testimonios">
+        <img src="Testimonios_Screenshot.png" alt="Testimonios freeCodeCamp"/>
+    </a>
+</p>
+
 Esta aplicación fue creada siguiendo el curso Aprende React Desde Cero publicado en el canal de YouTube [freeCodeCamp Español](https://www.youtube.com/freecodecampespanol). Su estructura inicial fue creada con el comando `npx create-react-app`.
 
 ## Ejecutar la Aplicación
