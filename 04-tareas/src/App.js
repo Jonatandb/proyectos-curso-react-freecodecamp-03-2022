@@ -1,7 +1,12 @@
 import './App.css'
+import LogoFreeCodeCamp from './components/LogoFreeCodeCamp/LogoFreeCodeCamp'
 
 function App() {
-  return <div className='App'>Tareas</div>
+  return (
+    <div className='aplicacion-tareas'>
+      <LogoFreeCodeCamp />
+    </div>
+  )
 }
 
 export default App
