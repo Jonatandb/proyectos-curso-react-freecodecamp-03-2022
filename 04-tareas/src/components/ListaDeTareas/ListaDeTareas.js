@@ -4,13 +4,25 @@ import './ListaDeTareas.css'
 import { useState } from 'react'
 
 export const ListaDeTareas = () => {
-  const [tareas, setTareas] = useState([])
+  const [tareas, setTareas] = useState(() => {
+    try {
+      return JSON.parse(window.localStorage.getItem('tareas')) || []
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  })
 
   const agregarTarea = tarea => {
-    if (tarea.texto.trim()) {
-      tarea.texto = tarea.texto.trim()
-      const tareasActualizadas = [tarea, ...tareas]
-      setTareas(tareasActualizadas)
+    try {
+      if (tarea.texto.trim()) {
+        tarea.texto = tarea.texto.trim()
+        const tareasActualizadas = [tarea, ...tareas]
+        setTareas(tareasActualizadas)
+        window.localStorage.setItem('tareas', JSON.stringify(tareasActualizadas))
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 
@@ -26,7 +38,12 @@ export const ListaDeTareas = () => {
       }
       return tarea
     })
-    setTareas(tareasActualizadas)
+    try {
+      setTareas(tareasActualizadas)
+      window.localStorage.setItem('tareas', JSON.stringify(tareasActualizadas))
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <>
