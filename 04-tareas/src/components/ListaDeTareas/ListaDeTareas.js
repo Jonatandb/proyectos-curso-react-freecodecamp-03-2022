@@ -14,12 +14,23 @@ export const ListaDeTareas = () => {
     }
   }
 
+  const eliminarTarea = id => {
+    const tareasActualizadas = tareas.filter(tarea => tarea.id !== id)
+    setTareas(tareasActualizadas)
+  }
+
   return (
     <>
       <Formulario onSubmit={agregarTarea} />
       <div className='tareas-lista-contenedor'>
         {tareas.map(tarea => (
-          <Tarea key={tarea.id} id={tarea.id} texto={tarea.texto} completada={tarea.completada} />
+          <Tarea
+            key={tarea.id}
+            id={tarea.id}
+            texto={tarea.texto}
+            completada={tarea.completada}
+            eliminarTarea={eliminarTarea}
+          />
         ))}
       </div>
     </>
