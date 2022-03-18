@@ -1,3 +1,4 @@
+import './Boton.css'
 export default function Boton(props) {
   const esOperador = children => {
     return isNaN(children) && children !== '.' && children !== '='
