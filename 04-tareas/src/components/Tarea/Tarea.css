@@ -20,6 +20,7 @@
   font-size: 20px;
   align-items: center;
   overflow-wrap: anywhere;
+  user-select: none;
 }
 
 /* Colores */
@@ -41,6 +42,10 @@
   width: 25px;
   height: 25px;
   margin: 5px;
+}
+
+.tarea-icono:hover {
+  color: #f02b11;
 }
 
 .tarea-contenedor.completada {

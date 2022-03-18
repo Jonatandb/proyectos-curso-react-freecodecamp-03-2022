@@ -26,4 +26,5 @@
   background-color: #00471b;
   color: white;
   text-transform: capitalize;
+  user-select: none;
 }
