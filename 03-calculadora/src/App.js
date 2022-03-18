@@ -6,7 +6,7 @@ import freeCodeCampLogo from './images/freecodecamp-logo.png'
 import { useState } from 'react'
 
 function App() {
-  const [input, setInput] = useState('Error!')
+  const [input, setInput] = useState('')
 
   const agregarInput = value => {
     setInput(input => input + value)
@@ -44,7 +44,7 @@ function App() {
           <Boton manejarClick={agregarInput}>/</Boton>
         </div>
         <div className='fila'>
-          <BotonClear>Clear</BotonClear>
+          <BotonClear manejarClear={() => setInput('')}>Clear</BotonClear>
         </div>
       </div>
     </div>
