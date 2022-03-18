@@ -1,28 +1,16 @@
 import Formulario from '../Formulario/Formulario'
 import Tarea from '../Tarea/Tarea'
 import './ListaDeTareas.css'
-import { useState } from 'react'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 export const ListaDeTareas = () => {
-  const [tareas, setTareas] = useState(() => {
-    try {
-      return JSON.parse(window.localStorage.getItem('tareas')) || []
-    } catch (error) {
-      console.error(error)
-      return []
-    }
-  })
+  const [tareas, setTareas] = useLocalStorage('tareas', [])
 
   const agregarTarea = tarea => {
-    try {
-      if (tarea.texto.trim()) {
-        tarea.texto = tarea.texto.trim()
-        const tareasActualizadas = [tarea, ...tareas]
-        setTareas(tareasActualizadas)
-        window.localStorage.setItem('tareas', JSON.stringify(tareasActualizadas))
-      }
-    } catch (error) {
-      console.error(error)
+    if (tarea.texto.trim()) {
+      tarea.texto = tarea.texto.trim()
+      const tareasActualizadas = [tarea, ...tareas]
+      setTareas(tareasActualizadas)
     }
   }
 
@@ -38,13 +26,9 @@ export const ListaDeTareas = () => {
       }
       return tarea
     })
-    try {
-      setTareas(tareasActualizadas)
-      window.localStorage.setItem('tareas', JSON.stringify(tareasActualizadas))
-    } catch (error) {
-      console.error(error)
-    }
+    setTareas(tareasActualizadas)
   }
+
   return (
     <>
       <Formulario onSubmit={agregarTarea} />
